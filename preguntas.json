@@ -158,5 +158,86 @@
     "respuesta_correcta": 2,
     "categoria": "Cultura_General",
     "recompensa_tipo": "moneda"
+  },
+  {
+    "id": 21,
+    "pregunta": "¿Cuánto es 6! ?",
+    "opciones": ["120", "720", "360", "5040"],
+    "respuesta_correcta": 1,
+    "categoria": "Unidad_III",
+    "recompensa_tipo": "estrella"
+  },
+  {
+    "id": 22,
+    "pregunta": "Las permutaciones de las letras de la palabra MASA son:",
+    "opciones": ["24", "6", "12", "48"],
+    "respuesta_correcta": 2,
+    "categoria": "Unidad_III",
+    "recompensa_tipo": "estrella"
+  },
+  {
+    "id": 23,
+    "pregunta": "El valor de P(5, 3) (permutaciones de 5 elementos tomados de 3 en 3) es:",
+    "opciones": ["60", "20", "120", "10"],
+    "respuesta_correcta": 0,
+    "categoria": "Unidad_III",
+    "recompensa_tipo": "estrella"
+  },
+  {
+    "id": 24,
+    "pregunta": "Las permutaciones circulares de 4 personas alrededor de una fogata son:",
+    "opciones": ["24", "12", "6", "4"],
+    "respuesta_correcta": 2,
+    "categoria": "Unidad_III",
+    "recompensa_tipo": "estrella"
+  },
+  {
+    "id": 25,
+    "pregunta": "¿Cuánto es 8! / 6! ?",
+    "opciones": ["14", "56", "72", "48"],
+    "respuesta_correcta": 1,
+    "categoria": "Unidad_III",
+    "recompensa_tipo": "estrella"
+  },
+  {
+    "id": 26,
+    "pregunta": "¿Cuál es el país más grande del mundo por superficie?",
+    "opciones": ["Canadá", "China", "Estados Unidos", "Rusia"],
+    "respuesta_correcta": 3,
+    "categoria": "Cultura_General",
+    "recompensa_tipo": "moneda"
+  },
+  {
+    "id": 27,
+    "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "opciones": ["1939", "1945", "1914", "1936"],
+    "respuesta_correcta": 0,
+    "categoria": "Cultura_General",
+    "recompensa_tipo": "moneda"
+  },
+  {
+    "id": 28,
+    "pregunta": "¿Cuál es el elemento químico con el símbolo 'Fe'?",
+    "opciones": ["Flúor", "Hierro", "Fósforo", "Francio"],
+    "respuesta_correcta": 1,
+    "categoria": "Cultura_General",
+    "recompensa_tipo": "moneda"
+  },
+  {
+    "id": 29,
+    "pregunta": "¿Quién escribió la obra de teatro 'Romeo y Julieta'?",
+    "opciones": ["Miguel de Cervantes", "Charles Dickens", "William Shakespeare", "Victor Hugo"],
+    "respuesta_correcta": 2,
+    "categoria": "Cultura_General",
+    "recompensa_tipo": "moneda"
+  },
+  {
+    "id": 30,
+    "pregunta": "¿Cuál es el río más largo del mundo?",
+    "opciones": ["Nilo", "Amazonas", "Misisipi", "Yangtsé"],
+    "respuesta_correcta": 1,
+    "categoria": "Cultura_General",
+    "recompensa_tipo": "moneda"
   }
 ]
+
