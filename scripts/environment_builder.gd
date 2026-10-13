@@ -238,15 +238,24 @@ func _add_bubble(pos: Vector3) -> void:
 	add_child(mi)
 
 func _add_cloud(pos: Vector3) -> void:
+	# Calculamos una dirección horizontal aleatoria y la alejamos del centro (por ejemplo, entre 3 y 6 unidades)
+	var angle := _rng.randf_range(0.0, TAU)
+	var distance := _rng.randf_range(3.0, 6.0)
+	var center_offset := Vector3(cos(angle) * distance, _rng.randf_range(2.0, 4.0), sin(angle) * distance)
+	var cloud_center := pos + center_offset
+	
 	var pieces := _rng.randi_range(3, 5)
 	for i in pieces:
 		var off := Vector3(_rng.randf_range(-1.6, 1.6), _rng.randf_range(-0.3, 0.3), _rng.randf_range(-1.6, 1.6))
-		_add_sphere(_rng.randf_range(0.8, 1.5), Color(1, 1, 1, 0.95), pos + off)
+		_add_sphere(_rng.randf_range(0.8, 1.5), Color(1, 1, 1, 0.95), cloud_center + off)
 
 func _add_palm(pos: Vector3) -> void:
+	# Ajustamos la posición base bajándola 3.8 unidades en el eje Y
+	var adjusted_pos := pos - Vector3(0, 3.8, 0)
+	
 	var h := _rng.randf_range(3.0, 4.5)
-	_add_cylinder(0.16, 0.22, h, Color("#8a5a34"), pos + Vector3(0, h * 0.5, 0), 10)
-	var top := pos + Vector3(0, h, 0)
+	_add_cylinder(0.16, 0.22, h, Color("#8a5a34"), adjusted_pos + Vector3(0, h * 0.5, 0), 10)
+	var top := adjusted_pos + Vector3(0, h, 0)
 	for i in 6:
 		var a := TAU * float(i) / 6.0
 		var leaf := SphereMesh.new()
@@ -264,12 +273,15 @@ func _add_palm(pos: Vector3) -> void:
 
 # Arbol de copa redonda apoyado en el suelo.
 func _add_tree(pos: Vector3) -> void:
+	# Ajustamos la posición base bajándola 4 unidades en el eje Y (puedes cambiar el 4 por el valor que prefieras)
+	var adjusted_pos := pos - Vector3(0, 4.0, 0)
+	
 	var h := _rng.randf_range(1.6, 2.4)
-	_add_cylinder(0.26, 0.36, h, Color("#8a5a34"), pos + Vector3(0, h * 0.5, 0), 10)
+	_add_cylinder(0.26, 0.36, h, Color("#8a5a34"), adjusted_pos + Vector3(0, h * 0.5, 0), 10)
 	var r := _rng.randf_range(1.0, 1.4)
-	_add_sphere(r, Color("#3fae3f"), pos + Vector3(0, h + r * 0.6, 0))
-	_add_sphere(r * 0.6, Color("#4fc44f"), pos + Vector3(r * 0.5, h + r * 1.0, r * 0.2))
-	_add_sphere(r * 0.5, Color("#2f9e2f"), pos + Vector3(-r * 0.5, h + r * 0.8, -r * 0.2))
+	_add_sphere(r, Color("#3fae3f"), adjusted_pos + Vector3(0, h + r * 0.6, 0))
+	_add_sphere(r * 0.6, Color("#4fc44f"), adjusted_pos + Vector3(r * 0.5, h + r * 1.0, r * 0.2))
+	_add_sphere(r * 0.5, Color("#2f9e2f"), adjusted_pos + Vector3(-r * 0.5, h + r * 0.8, -r * 0.2))
 
 func _add_cactus(pos: Vector3) -> void:
 	var h := _rng.randf_range(1.8, 3.0)
